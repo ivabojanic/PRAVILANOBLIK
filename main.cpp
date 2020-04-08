@@ -12,7 +12,7 @@ public:
     virtual double Obim() = 0;
 };
 
-class Elipsa : Figura
+class Elipsa : public Figura
 {
 private:
     double a;
@@ -39,7 +39,7 @@ public:
         return O;
     }
 };
-class Pravougaonik : Figura
+class Pravougaonik : public Figura
 {
 private:
     double a;
@@ -84,11 +84,9 @@ double Obim2()
         return A.Povrsina()- B.Povrsina();
     }
 };
-class pravilanOblik : Oblik
+class pravilanOblik : public Oblik
 {
 public:
-    Obim2(){};
-    Povrsina2(){};
     pravilanOblik() : Oblik(3,3,2,2){}
     pravilanOblik(double x, double y) : Oblik(x,x,y,y){}
     pravilanOblik(const pravilanOblik &P) : Oblik((Oblik)P){}
